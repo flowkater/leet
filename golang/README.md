@@ -11,9 +11,22 @@ This repository contains my solutions to LeetCode problems implemented in Go.
 
 This project uses [Ginkgo](https://onsi.github.io/ginkgo/) for testing.
 
-To run tests:
+### Test Commands
+
+Run all tests:
 ```bash
-go test ./...
+make test-all
+```
+
+Run test for a specific problem by number:
+```bash
+make test-one n=1  # Run tests for Problem 1 (Two Sum)
+make test-one n=20 # Run tests for Problem 20 (Valid Parentheses)
+```
+
+Run test by pattern:
+```bash
+make test p=Problem1  # Run tests matching "Problem1"
 ```
 
 ## Problems
@@ -22,3 +35,4 @@ go test ./...
 - [Order Grind 75 Questions](https://www.techinterviewhandbook.org/grind75/)
 
 1. Two Sum - [Problem Link](https://leetcode.com/problems/two-sum/)
+2. Valid Parentheses - [Problem Link](https://leetcode.com/problems/valid-parentheses/)
