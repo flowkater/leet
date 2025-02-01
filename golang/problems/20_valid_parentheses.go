@@ -29,7 +29,19 @@ package problems
 // 1 <= s.length <= 104
 // s consists of parentheses only '()[]{}'.
 
-
+// Stack 문제
 func IsValid(s string) bool {
-    return false
+	stack, m := []rune{}, map[rune]rune{'(': ')', '[': ']', '{': '}'}
+
+	for _, ch := range s {
+		if closing, isOpen := m[ch]; isOpen {
+			stack = append(stack, closing)
+		} else if len(stack) == 0 || stack[len(stack)-1] != ch {
+			return false
+		} else {
+			stack = stack[:len(stack)-1]
+		}
+	}
+
+	return len(stack) == 0
 }

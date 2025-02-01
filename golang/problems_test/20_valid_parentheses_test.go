@@ -20,6 +20,18 @@ var _ = Describe("Problem20", func() {
 		Expect(result).To(BeTrue())
 	})
 
+	It("should return true when s is '([]){}'", func() {
+		s := "([]){}"
+		result := problems.IsValid(s)
+		Expect(result).To(BeTrue())
+	})
+
+	It("should return true when s is '([]{})'", func() {
+		s := "([]{})"
+		result := problems.IsValid(s)
+		Expect(result).To(BeTrue())
+	})
+
 	It("should return false when s is '(]'", func() {
 		s := "(]"
 		result := problems.IsValid(s)
