@@ -7,21 +7,25 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-var _ = Describe("1. Two Sum", func() {
-	It("should return indices of the two numbers that add up to target", func() {
+var _ = Describe("Problem1", func() {
+	It("should return [0,1] when nums is [2,7,11,15] and target is 9", func() {
 		nums := []int{2, 7, 11, 15}
 		target := 9
 		result := problems.TwoSum(nums, target)
 		Expect(result).To(ConsistOf(0, 1))
+	})
 
-		nums = []int{3, 2, 4}
-		target = 6
-		result = problems.TwoSum(nums, target)
+	It("should return [1,2] when nums is [3,2,4] and target is 6", func() {
+		nums := []int{3, 2, 4}
+		target := 6
+		result := problems.TwoSum(nums, target)
 		Expect(result).To(ConsistOf(1, 2))
+	})
 
-		nums = []int{3, 3}
-		target = 6
-		result = problems.TwoSum(nums, target)
+	It("should return [0,1] when nums is [3,3] and target is 6", func() {
+		nums := []int{3, 3}
+		target := 6
+		result := problems.TwoSum(nums, target)
 		Expect(result).To(ConsistOf(0, 1))
 	})
 
